@@ -1,2 +1,3 @@
 # hello-world
-GitHub set up
+
+Hello, I am Jesse and I like Outer Space
