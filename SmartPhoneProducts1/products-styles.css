@@ -1,0 +1,27 @@
+h1,h2{
+    text-align: center;
+}
+
+main{
+    display: flex;
+flex-flow: row wrap;
+justify-content: space-around;
+}
+
+body > div {
+    border: 5px solid black;
+display: flex;
+
+}
+
+body {
+    width: 800px; 
+    margin: 0 auto;
+    
+}
+
+img {
+
+    widows: 200px;
+    height: 200px;
+}
