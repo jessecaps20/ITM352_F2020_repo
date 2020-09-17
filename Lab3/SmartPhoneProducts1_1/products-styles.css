@@ -1,0 +1,41 @@
+h1,h2{
+    text-align: center;
+}
+
+main{
+    display: flex;
+flex-flow: row wrap;
+justify-content: space-around;
+}
+
+body > div {
+    border: 5px solid black;
+display: flex;
+
+}
+
+body {
+    width: 800px; 
+    margin: 0 auto;
+    
+}
+
+.item img {
+
+    widows: 200px;
+    height: 200px;
+}
+
+.rotate img
+{
+  animation: rotation .3s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
