@@ -1,0 +1,42 @@
+h1,h2{
+    font-family: 'Oswald', sans-serif;
+}
+
+.navbar{
+    text-align: left;
+    word-spacing: 3em;
+}
+
+body{
+    font-family: 'OpenSans', sans-serif;
+    color: yellow;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 950px;
+    background-color: black;
+}
+
+img{
+    float:left;
+    margin:10px;
+}
+
+.left{
+    float: left;
+    width: 300px;
+    padding: 1em;
+}
+
+.right{
+    float: right;
+    width: 300px;
+    padding: 1em;
+}
+
+.center{
+    margin-right: 300px;
+    margin-left: 300px;
+    padding: 1em;
+}
