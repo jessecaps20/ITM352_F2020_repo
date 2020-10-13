@@ -1,7 +1,14 @@
-<span id="firstname">Rick</span>, <span id="lastname">Port</span>
+<span id="firstname">Rick</span>
+<span id="lastname">Port</span>
+<span id="hold1"></span>
+<span id="hold2"></span>
 <br>
 <input type="button" value="Swap" 
     onclick="
-    firstname.innerHTML = lastname.innerHTML;
-    lastname.innerHTML = firstname.innerHTML;
+    hold1.innerHTML = firstname.innerHTML;
+    hold2.innerHTML = lastname.innerHTML;
+    lastname.innerHTML = hold1.innerHTML;
+    firstname.innerHTML = hold2.innerHTML;
+    hold1.innerHTML = null;
+    hold2.innerHTML = null;
     ">
