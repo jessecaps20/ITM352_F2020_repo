@@ -78,10 +78,11 @@
                     for (i = 0; i < products.length; i++) {
                         document.write(`
                         <h2>${products[i].guitarist}</h2>   
+                        
                         <h2>$${products[i].price}</h2>
                         <div><img src="${products[i].image}"></div>
             
-                        <div><label id="quantity${i}_label"}">Quantity:</label>
+                        <div><label id="quantity${i}_label"}">Number Of Gigs:</label>
                                 <input type="text" placeholder="0" name="quantity${i}" 
                                 onkeyup="checkQuantityTextbox(this);">         
                         </div>

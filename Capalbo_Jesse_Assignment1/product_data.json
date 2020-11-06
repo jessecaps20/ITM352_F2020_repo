@@ -3,15 +3,13 @@
     {
         "guitarist": "SLASH",
         "price": 3500,
+        "description":,
         "image": "./images/slash.jpg"
-       
-        
     },
     {
         "guitarist": "JIMMY PAGE",
         "price": 8000,
         "image": "./images/jimmy.jpg"
-       
     },
     {
         "guitarist": "EDDIE VAN HALEN",
@@ -23,12 +21,15 @@
         "guitarist": "STEVIE RAY VAUGHN",
         "price": 4500,
         "image": "./images/stevie.jpg"
-    
+    },
+    {
+        "guitarist": "JIMI HENDRIX",
+        "price": 10000,
+        "image": "./images/HENDRIX.jpg"
     },
     {
         "guitarist": "ROCKSTAR FUEL",
         "price": 50,
         "image": "./images/jack.jpg"
-        
     }
 ]
