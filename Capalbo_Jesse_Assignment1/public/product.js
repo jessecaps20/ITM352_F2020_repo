@@ -4,8 +4,8 @@
     {
         "guitarist": "SLASH",
         "price": 3500.00,
-        "description":"fun guy",
-        "image": "./images/slash.jpg",
+        "description":"hi",
+        "image": "./images/slash.jpg"
     },
     {
         "guitarist": "JIMMY PAGE",
