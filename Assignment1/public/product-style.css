@@ -1,0 +1,137 @@
+/*CSS Sheet For Products Display Page */
+
+/* Referenced SmartPhoneProducts for code*/
+html {
+    font-family: 'New Rocker', cursive;
+    font-size: 20px; 
+    background-position: center; 
+  }
+
+/* background image */
+body {
+    background-image: url(images/flame.jpg);
+}
+
+/* header and footer of products_display.html and invoice.html size and background */
+header, footer {
+    font-family:'New Rocker', cursive;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    width: 850px;
+    background-color: black;
+    color: white;
+}
+/*creates white border around footer and header*/
+header, footer{
+    border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+    border-left-style: solid;
+	border-top-color: white;
+	border-right-color:white;
+	border-bottom-color: white;
+	border-left-color:white;
+}
+    
+
+
+/* creates black border */
+ main, table {
+    border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+    border-left-style: solid;
+	border-top-color: black;
+	border-right-color:black;
+	border-bottom-color: black;
+	border-left-color:black;
+}
+
+
+
+/* positioning/display of products */
+
+main {
+    background-image: url(images/whiteflame2.jpg);
+    background-color: white;
+    display: block;
+    position: relative;
+    flex-flow: row wrap;
+    justify-content: space-around;
+	font-family: 'New Rocker', cursive;
+	text-align: center;
+    margin: auto;
+    resize: vertical;
+    overflow: auto;         
+}
+
+/* space outside of products display and space surrounding invoice table, referenced an answer on stackexchange*/
+
+main, table {
+    padding-top: 75px;
+    padding-right: 75px;
+    padding-bottom: 75px;
+    padding-left: 75px;
+	height: auto;
+    width: 700px;
+    border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+    border-left-style: solid;
+	border-top-color: black;
+	border-right-color:black;
+	border-bottom-color: black;
+	border-left-color:black;
+}
+
+/* invoice table size and background */
+table {
+    background-image: url(images/whiteflame2.jpg);
+    background-color:white;
+    text-align: center;
+    margin: auto;
+    height: 800px;
+    width: 800px;  
+}
+
+/* product name and price are header 2 */
+h2 {
+    color: black;
+    font-family:'New Rocker', cursive;
+    font-size: 35px;
+    margin: 0;
+    padding: 2px;
+    padding-left: 14px;
+}
+
+/* size and border of product images */
+ img {
+    width: 300px;
+    height: 300px; 
+    border-style: solid;
+    border-width: 5px;
+    border-color:black;
+}
+
+/* purchase button */
+input[type=submit] {
+    width: 350px;  height: 50px;
+    font-size: 20px;
+    color: red;
+    
+    font-family: 'New Rocker', cursive;
+    
+  }
+/*add the same awesome hover over glow as the index page*/
+  input:hover {
+    box-shadow: 0 0 15px 10px black;
+  }
+/* add space between div elements: product image and quantity textbox */
+  div {
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+
+ 
