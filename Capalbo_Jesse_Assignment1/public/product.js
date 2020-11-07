@@ -1,41 +1,46 @@
 /* Javascript array for products */
-
  var products =[
     {
-        "guitarist": "SLASH",
-        "price": 3500.00,
-        "description":"hey",
+        "product": "SLASH",
+        "price": 5000.00,
         "image": "./images/slash.jpg"
     },
     {
-        "guitarist": "JIMMY PAGE",
+        "product": "JIMMY PAGE",
         "price": 8000.00,
         "image": "./images/jimmy.jpg"
     },
     {
-        "guitarist": "EDDIE VAN HALEN",
+        "product": "EDDIE VAN HALEN",
         "price": 6000.00,
         "image": "./images/eddie.jpg"
     },
     {
-        "guitarist": "STEVIE RAY VAUGHN",
+        "product": "RANDY RHOADS",
+        "price": 3500.00,
+        "image": "./images/randy.jpg"
+    },
+    {
+        "product": "STEVIE RAY VAUGHN",
         "price": 4500.00,
         "image": "./images/stevie.jpg"
     },
     {
-        "guitarist": "JIMI HENDRIX",
+        "product": "ERIC CLAPTON",
         "price": 10000.00,
+        "image": "./images/clapton.jpg"
+    },
+    {
+        "product": "JIMI HENDRIX",
+        "price": 20000.00,
         "image": "./images/HENDRIX.jpg"
     },
     {
-        "guitarist": "ROCKSTAR FUEL",
+        "product": "ROCKSTAR FUEL",
         "price": 50.00,
         "image": "./images/jack.jpg"
     }
-    
 ];
-
-
 if(typeof module != 'undefined') {
-    module.exports = products;
+    module.exports.products = products;
 }

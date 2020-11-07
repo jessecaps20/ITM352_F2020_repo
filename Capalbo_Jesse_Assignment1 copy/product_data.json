@@ -1,34 +1,43 @@
 
 [
     {
-        "guitarist": "SLASH",
-        "price": 3500,
+        "product": "SLASH",
+        "price": 5000,
         "description":"fun guy",
         "image": "./images/slash.jpg"
     },
     {
-        "guitarist": "JIMMY PAGE",
+        "product": "JIMMY PAGE",
         "price": 8000,
         "image": "./images/jimmy.jpg"
     },
     {
-        "guitarist": "EDDIE VAN HALEN",
+        "product": "EDDIE VAN HALEN",
         "price": 6000,
         "image": "./images/eddie.jpg"
-
     },
     {
-        "guitarist": "STEVIE RAY VAUGHN",
+        "product": "RANDY RHOADS",
+        "price": 3500,
+        "image": "./images/randy.jpg"
+    },
+    {
+        "product": "STEVIE RAY VAUGHN",
         "price": 4500,
         "image": "./images/stevie.jpg"
     },
     {
-        "guitarist": "JIMI HENDRIX",
+        "product": "ERIC CLAPTON",
         "price": 10000,
+        "image": "./images/clapton.jpg"
+    },
+    {
+        "product": "JIMI HENDRIX",
+        "price": 20000,
         "image": "./images/HENDRIX.jpg"
     },
     {
-        "guitarist": "ROCKSTAR FUEL",
+        "product": "ROCKSTAR FUEL",
         "price": 50,
         "image": "./images/jack.jpg"
     }
