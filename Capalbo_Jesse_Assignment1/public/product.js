@@ -4,7 +4,7 @@
     {
         "guitarist": "SLASH",
         "price": 3500.00,
-        "description":"hi",
+        "description":"hey",
         "image": "./images/slash.jpg"
     },
     {
