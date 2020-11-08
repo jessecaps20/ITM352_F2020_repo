@@ -3,6 +3,7 @@
     {
         "product": "SLASH",
         "price": 5000.00,
+        "description":"fun guy",
         "image": "./images/slash.jpg"
     },
     {
