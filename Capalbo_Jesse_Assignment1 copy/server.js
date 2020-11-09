@@ -1,7 +1,7 @@
 
 // Java Script Server 
 // Referenced from Assignment 1 screencast and Lab13
-var products = require("./public/product.js");
+var products = require("./public/product_data.json");
 var querystring = require('querystring'); //server responds to any errors
 var express = require('express'); //express package
 var app = express(); // initialize express
@@ -15,22 +15,24 @@ app.use(myParser.urlencoded({ extended: true })); //get data in the body
 
 app.post("/process_form", function (request, response) { //validate quantity data before sending to invoice
     let POST = request.body; 
-    response.send(POST);
     if (typeof POST['submitPurchase'] != 'undefined') {
-        var validQuantities = true; 
-        var quantities = false
-        for (i = 0; i < products.length; i++) {
-            qty = POST[`quantity${i}`];
-            quantities = quantities || qty > 0; // If larger than 0 then it is okay
-            validQuantities = validQuantities && isNonNegInt(qty);    // if both a quantity over 0 and valid   
-        }
-        const stringified = queryString.stringify(POST);// if all quantities are valid invoice is generated
-        if (validQuantities && quantities) {
-            response.redirect("./invoice.html?" + stringified); 
-        }
-        else { response.send('Enter a valid quantity!') } // if quantities are not valid send message
+        response.send("Invalid Entry!");
     }
-    response.send(POST);
+
+    let validQuantities = [];
+    let hasErrors = false; 
+    for (i in products) {
+        qty = POST[`quantity${i}`];
+        if (qty != '' || qty > 0) validQuantities.push(isNonNegInt(qty)); // if both a quantity over 0 and valid
+    }
+    hasErrors = validQuantities.includes(false);
+    const stringified = querystring.stringify(POST);// if all quantities are valid invoice is generated
+
+    if (validQuantities.length != 0 && !hasErrors) {
+        response.redirect("./invoice.html?" + stringified); 
+    }
+    else { response.send('Enter a valid quantity!') } // if quantities are not valid send message
+    
 });
 function isNonNegInt(q, returnErrors = false) { //isNonNegInt function that returns errors 
     errors = []; 

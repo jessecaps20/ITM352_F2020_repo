@@ -1,4 +1,4 @@
-/* Referenced SmartPhoneProducts for code*/
+/* Referenced SmartPhoneProducts and stack exchange for code*/
 html {
     font-family: 'New Rocker', cursive;
     font-size: 20px; 
@@ -55,7 +55,7 @@ main {
     resize: vertical;
     overflow: auto;         
 }
-/* spacingof products display and table, referenced on stackexchange*/
+/* spacing of products display and table*/
 main, table {
     padding-top: 75px;
     padding-right: 75px;
