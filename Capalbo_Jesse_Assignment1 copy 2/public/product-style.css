@@ -1,0 +1,116 @@
+/* Referenced SmartPhoneProducts and stack exchange for code*/
+html {
+    font-family: 'New Rocker', cursive;
+    font-size: 20px; 
+    background-position: center; 
+  }
+/* background image */
+body {
+    background-image: url(images/flame.jpg);
+}
+/* header and footer info */
+header, footer {
+    font-family:'New Rocker', cursive;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    width: 850px;
+    background-color: black;
+    color: white;
+}
+/*header and footer border info*/
+header, footer{
+    border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+    border-left-style: solid;
+	border-top-color: white;
+	border-right-color:white;
+	border-bottom-color: white;
+	border-left-color:white;
+}
+/* main and table border info */
+ main, table {
+    border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+    border-left-style: solid;
+	border-top-color: black;
+	border-right-color:black;
+	border-bottom-color: black;
+	border-left-color:black;
+}
+/* positioning of products */
+main {
+    background-image: url(images/whiteflame2.jpg);
+    background-color: white;
+    display: block;
+    position: relative;
+    flex-flow: row wrap;
+    justify-content: space-around;
+	font-family: 'New Rocker', cursive;
+	text-align: center;
+    margin: auto;
+    resize: vertical;
+    overflow: auto;         
+}
+/* spacing of products display and table*/
+main, table {
+    padding-top: 75px;
+    padding-right: 75px;
+    padding-bottom: 75px;
+    padding-left: 75px;
+	height: auto;
+    width: 700px;
+    border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+    border-left-style: solid;
+	border-top-color: black;
+	border-right-color:black;
+	border-bottom-color: black;
+	border-left-color:black;
+}
+/* invoice table size info */
+table {
+    background-image: url(images/whiteflame2.jpg);
+    background-color:white;
+    text-align: center;
+    margin: auto;
+    height: 800px;
+    width: 800px;  
+}
+/* product name and price */
+h2 {
+    color: black;
+    font-family:'New Rocker', cursive;
+    font-size: 35px;
+    margin: 0;
+    padding: 2px;
+    padding-left: 14px;
+}
+/* product images info */
+ img {
+    width: 300px;
+    height: 300px; 
+    border-style: solid;
+    border-width: 5px;
+    border-color:black;
+}
+/* purchase button info*/
+input[type=submit] {
+    width: 350px;  height: 50px;
+    font-size: 20px;
+    color: red;
+    font-family: 'New Rocker', cursive;
+  }
+/*add hover over effect*/
+  input:hover {
+    box-shadow: 0 0 15px 10px black;
+  }
+/* add space between div elements*/
+  div {
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
