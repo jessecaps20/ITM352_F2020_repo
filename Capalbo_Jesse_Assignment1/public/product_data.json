@@ -33,7 +33,7 @@
     {
         "product": "JIMI HENDRIX",
         "price": 20000,
-        "image": "./images/HENDRIX.jpg"
+        "image": "./images/hendrix.jpg"
     },
     {
         "product": "ROCKSTAR FUEL",
