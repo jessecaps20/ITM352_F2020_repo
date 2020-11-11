@@ -15,30 +15,6 @@
         if (theTextbox.value.trim() == '') errs = ['Quantity:']; 
         document.getElementById(theTextbox.name + '_label').innerHTML = errs.join(", ");
     }
-    window.onload = function () {
-        let params = (new URL(document.location)).searchParams; // verifys the query string data is valid then redirect to invoice if ok
-        if (params.has('purchase_submit')) {
-            has_errors = false; 
-            total_qty = 0; 
-            for (i = 0; i < products.length; i++) {
-                if (params.has(`quantity${i}`)) {
-                    a_qty = params.post(`quantity${i}`);
-                    product_form[`quantity${i}`].value = a_qty;
-                    total_qty += a_qty;
-                    if (!isNonNegInt(a_qty)) {
-                        has_errors = true; 
-                        checkQuantityTextbox(product_form[`quantity${i}`]); 
-                    }
-                }
-            }
-            if (has_errors) { //responds to errors or redirects to invoice if it is ok
-                alert("Please enter only valid quantities!");
-            } else if (total_qty == 0) { 
-                alert("Please select quantities!");
-            } else { 
-            }
-        }
-    }
 </script>
 
 <!DOCTYPE html>
@@ -46,11 +22,8 @@
 
 <head>
     <meta charset="utf-8">
-
     <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
-
     <title>Choose Your Legend To Hire</title>
-
     <link href="product-style.css" rel="stylesheet">
 </head>
 
@@ -69,7 +42,6 @@
                     for (i = 0; i < products.length; i++) {
                         document.write(`
                         <h2>${products[i].product}</h2>   
-                        <p>${(products[i].description)}</p>
                         <h2>$${products[i].price}</h2>
                         <div><img src="${products[i].image}"></div>
                         <div><label id="quantity${i}_label"}">Number Of Gigs:</label>
