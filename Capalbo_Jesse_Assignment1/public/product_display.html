@@ -1,18 +1,18 @@
 <script src="./product.js" type="text/javascript">//links page to products array </script>
 
-<script>// code referenced from assignment 1 examples and lab
+<script>// code referenced from assignment 1 example and lab 12,  used to check if the data entry is valid, must be a number and an integer
     function isNonNegInt(q, return_errors = false) { //isNonNegInt function that checks for errors 
-        errors = []; 
-        if (q == '') q = 0; // assumes that no input is equal to zero
-        if (Number(q) != q) errors.push('<font color="red">Not a number!</font>'); 
-        else if (q < 0) errors.push('<font color="red">Negative value!</font>');
-        else if (parseInt(q) != q) errors.push('<font color="red">Not an integer!</font>');
+        errors = []; // array assumes no errors at first
+        if (q == '') q = 0; // //sets blank inputs to 0
+        if (Number(q) != q) errors.push('<font color="red">Not a number!</font>'); // Checks if string is a number value
+        else if (q < 0) errors.push('<font color="red">Negative value!</font>'); // Checks if the string is non-negative
+        else if (parseInt(q) != q) errors.push('<font color="red">Not an integer!</font>'); // Checks that it is an integer
         return return_errors ? errors : (errors.length == 0);
     }
-    function checkQuantityTextbox(theTextbox) { //function to check if data is valid 
+    function checkQuantityTextbox(theTextbox) { //function to check if data is valid. Checks the value of the quantity put into the textbox and uses isnonnegint is there is an error
         errs = isNonNegInt(theTextbox.value, true); 
-        if (errs.length == 0) errs = ['Quantity:']; 
-        if (theTextbox.value.trim() == '') errs = ['Quantity:']; 
+        if (errs.length == 0) errs = ['Number Of Gigs:']; //keeps "Number Of Gigs" next to text box as values are entered
+        if (theTextbox.value.trim() == '') errs = ['Number Of Gigs:']; //keeps "Number Of Gigs" next to text box as values are entered
         document.getElementById(theTextbox.name + '_label').innerHTML = errs.join(", ");
     }
 </script>
@@ -38,8 +38,7 @@
             <main id="products_main_display">
                 <script>
                     // takes data from the variable product from product.js array
-                    // shows "product", "image", "price", and a quantity textbox labeled Quantity
-                    for (i = 0; i < products.length; i++) {
+                    for (i = 0; i < products.length; i++) { // for loop that shows "product", "image", "price", and a quantity textbox labeled Quantity
                         document.write(`
                         <h2>${products[i].product}</h2>   
                         <h2>$${products[i].price}</h2>
