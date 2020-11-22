@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link href="login_registration.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
+
+    <script>
+        let params = (new URL(document.location)).searchParams;
+        console.log('params: ', params);
+    </script>
+</head>
+
+<body>
+    <main>
+        <h1>Login Or Register To Reserve Your Rock Stars!</h1>
+        <form name="login" method="POST" action="/process_login">
+            <div class="login-box">
+                <input type="text" name="username" id="username" size="40" placeholder="Enter Username"
+                    required><br><br>
+                <input type="password" name="password" size="40" placeholder="Enter Password" onkeyup=""
+                    required><br><br>
+                <input type="submit" value="Login" name="login"><br>
+        </form>
+        </div>
+        <script>
+            login.action += document.location.search;
+        </script>
+        <h2>New user?</h2><br>
+        <input type="submit" name="newuser" value="Click Here To Register" button
+            onclick="window.location.href=`registration.html${document.location.search}`">
+    </main>
+
+</body>
+<script>
+    if (params.has('LogError')) {
+        alert('Invalid Username or Password');
+    }
+</script>
+</html>

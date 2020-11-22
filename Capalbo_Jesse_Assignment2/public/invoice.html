@@ -1,9 +1,11 @@
+<!--Code from this invoice page referenced from invoice 4-->
 <script src="./product.js" type="text/javascript">//uses get request for the product list</script>
 <script> // code referenced from invoice 4 lab
     let params = (new URL(document.location)).searchParams; //takes data from query called submitPurchase, if it has it then it looks for the quantities
     var quantities = []; //creates quantities array
+    let thank = ""; //for alert that pops up after login/registration vefore invoice
     if (params.has('username')) {
-        alert(`Thank You For Rocking With Us ${params.get('username')}!`)
+        thank = `Thank You For Rocking With Us ${params.get('username')}!`;
     }
     if (params.has('purchase_submit')) { // loop that pulls data based on the quantities entered
         for (i = 0; i < products.length; i++) {
@@ -13,8 +15,9 @@
             }
         }
     }
-    console.log(quantities);
+    console.log(quantities);//prints out quantities
 </script>
+<script defer>alert(thank);// alert that pops up after login/registration vefore invoice, referenced from stackexchange</script> 
 <head>
     <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
@@ -36,7 +39,7 @@
                 <th style="text-align: center;" width="13%">Price</th>
                 <th style="text-align: center;" width="54%">Extended Price</th>
             </tr>
-            <script> //get product information for each from the array to compute. above code creates table
+            <script> //below code gets product information for each from the array to compute. above code creates table
                 subtotal = 0;
                 for (i = 0; i < products.length; i++) {
                     if (quantities[i] > 0) {
