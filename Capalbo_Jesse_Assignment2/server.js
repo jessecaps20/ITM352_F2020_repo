@@ -1,6 +1,6 @@
 
 // Java Script Server 
-// copied/referenced from Assignment 1 screencast, Lab13, Lab14 and stack exchange
+// copied/referenced from Assignment 1 screencast and Lab13 and stack exchange
 var products = require("./public/product_data.json");//load products from json file
 const querystring = require('querystring'); //server responds to any errors
 var express = require('express'); //express package
@@ -51,14 +51,15 @@ app.post("/process_login", function (request, response) {
     console.log(request.query);
     the_username = request.body.username.toLowerCase(); //makes username case insensitive
     if (typeof users_reg_data[the_username] != 'undefined') { //check if username actually exists
-        if (users_reg_data[the_username].password == request.body.password) { //if the username exists ask for the password
+        if (users_reg_data[the_username].password == request.body.password) {
             request.query.username = the_username;
             console.log(users_reg_data[request.query.username].name);
             request.query.name = users_reg_data[request.query.username].name;
-            response.redirect('/invoice.html?' + querystring.stringify(request.query));//if all good redirect to invoice
-            return; //if all good redirect to invoice//
+            response.redirect('/invoice.html?' + querystring.stringify(request.query));
+            return;
+            //if all good redirect to invoice//
         } else {
-            LogError.push = ('Invalid Password'); //Password does not exist or is wrong
+            LogError.push = ('Invalid Password'); //Password does not exist/is wrong
             console.log(LogError);
             request.query.username = the_username;
             request.query.name = users_reg_data[the_username].name;
@@ -72,17 +73,19 @@ app.post("/process_login", function (request, response) {
     }
     response.redirect('./login.html?' + querystring.stringify(request.query));
 });
+
 //From Lab 13
 //Server-side processing
 app.post("/process_register", function (request, response) {
-    console.log(request.body);
+    qstr = request.body;
+    console.log(qstr);
     var errors = [];
     var reguser = request.body.username.toLowerCase(); //makes username case insensitive
     if (typeof users_reg_data[reguser] != 'undefined') { //Check if username already exists
         errors.push('Username is Already in Use.')
     }
-    if ((/[a-z0-9]+/).test(request.body.username) == false) {//Check if there are other symbols instead of numberd and letters
-        errors.push('Numbers and Letters only'); //Check if there are other symbols instead of numberd and letters
+    if ((/[a-z0-9]+/).test(request.body.username) == false) {
+        errors.push('Numbers and Letters only'); //Check if there are other symbols
     }
     if ((request.body.password.length < 6 == true)) {//password validation
         errors.push('Password Too Short - 6 characters minimum'); //Check if password is too short
@@ -90,14 +93,15 @@ app.post("/process_register", function (request, response) {
     if (request.body.password !== request.body.repeat_password) {// check to see if passwords match
         errors.push('Passwords Do Not Match') //Check if passwords match
     }
-    if (errors.length == 0) {   //if no errors remember user's registration in json made 
+    if (errors.length == 0) {
         console.log('none');
         request.query.username = reguser; //Input username into JSON file array
+        //request.query.name = request.body.name; //Input fullname in array
         request.query.password = request.body.password; //Input password in array
         fs.writeFileSync(filename, JSON.stringify(users_reg_data)); //Write it out in the JSON file to store data
         response.redirect('/invoice.html?' + querystring.stringify(request.query)); //send to invoice if all good
     }
-    if (errors.length > 0) { //directs user to registration page if there are any errrors
+    if (errors.length > 0) {
         console.log(errors)
         request.query.name = request.body.name;
         request.query.username = request.body.username;

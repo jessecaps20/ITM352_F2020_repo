@@ -9,7 +9,7 @@
     <link href="login_registration.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
 
-    <script>//displays login any login errors and finds errors in URL string
+    <script>
         let params = (new URL(document.location)).searchParams;
         console.log('params: ', params);
     </script>
@@ -28,7 +28,7 @@
         </form>
         </div>
         <script>
-            login.action += document.location.search; // action so that information will be lost from the input on display page display page
+            login.action += document.location.search;
         </script>
         <h2>New user?</h2><br>
         <input type="submit" name="newuser" value="Click Here To Register" button
@@ -37,7 +37,7 @@
 
 </body>
 <script>
-    if (params.has('LogError')) { //creates alert for invalid usernames or passwords
+    if (params.has('LogError')) {
         alert('Invalid Username or Password');
     }
 </script>

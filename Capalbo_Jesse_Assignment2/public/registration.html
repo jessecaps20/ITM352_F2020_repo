@@ -12,26 +12,28 @@
     var password = document.getElementById("password"); //make password an object
     var repeat_password = document.getElementById("repeat_password"); //make repeat password an object
 
-    function samePassword() {//make sure passwords are equal
+    function validatePassword() {//make sure passwords are equal
         if (password.value != repeat_password.value) { //passwords dont match
             alert("Passwords do not match");
-            response.redirect('public/registration.html')// redirect to registration
+            response.redirect('public/registration.html')
         }
         else {
             response.redirect('Login_Successful') //passwords match and login is successful
         }
     }
-    function setProcess(querystring){ //reset the form action to include passed-on querystring
-        let process = "/process_register";
-        document.getElementById("reg_form").action = process + querystring;
+
+    function setFormAction(querystring){ //reset the form action to include passed-on querystring
+        let act = "/process_register";
+        document.getElementById("reg_form").action = act + querystring;
     }
-    samePassword();
+
+    validatePassword();
 </script>
 
 <body>
     <main>
         <h1>Login or sign up to continue to purchase</h1>
-        <form method="POST" action="/process_register" onsubmit="samePassword()" id="reg_form">
+        <form method="POST" action="/process_register" onsubmit="validatePassword()" id="reg_form">
             <div class="registration-box">
                 <input type="text" name="username" size="40" pattern=".[a-z0-9]{3,10}" required
                     title="Minimum 4 Characters, Maximum 10 Characters, Numbers/Letters Only"
@@ -46,8 +48,11 @@
         </form>
         </div>
     </main>
+
     <script>
-        setProcess(document.location.search);
+        setFormAction(document.location.search);
     </script>
+
 </body>
+
 </html>
