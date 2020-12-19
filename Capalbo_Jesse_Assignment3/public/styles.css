@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=New+Rocker&display=swap");
+body {
+   
+    font-family: Heavy Copper;
+    background-image: url(images/flame.jpg);
+}
+
+
+.header {
+    background-color: rgb(255, 200, 208);
+}
+
+.header img {
+    width: 500px;
+    height: 10%;
+    float: initial;
+    
+}
+/*Navigation bar*/
+
+.nav ul {
+  margin: 0;
+}
+
+.nav li {
+  display: inline;
+  font-size: 25px;
+}
+
+.nav a {
+  display: inline-block;
+  padding: .5em;
+  color: black;
+  text-decoration: none;
+}
+
+/*main*/
+
+
+.main-nav {
+  font-family: Heavy Copper;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: lighter;
+  background-color: whitesmoke;
+  margin: 30px;
+  border: 5px solid black;
+  border-radius: 15px;
+}
+.brandlogo{
+  height: 70px;
+}
+.main-nav li {
+  padding: 0 2%;
+}
+
+.nav a:hover {
+  background-color: rgb(240, 240, 240);
+  border-radius: 15px;
+ 
+}
+
+.main-header {
+  background-blend-mode: multiply;
+  background-size: cover;
+  padding-bottom: 20px;
+}
+
+
+.index_page_intro_content {
+    background-color: whitesmoke;
+}
+
+.index_page_intro_content h2 {
+    text-align: center;
+    background-color: whitesmoke;
+    font-family:Heavy Copper;
+    font-size: 50px;
+}
+
+.title-name{
+    
+    font-family: Heavy Copper Halftone;
+  text-align: center;
+  font-size: 100px;
+  font-weight: lighter;
+  background-image: url(images/whiteflame2.jpg);
+  margin: 30px;
+  border: 5px solid black;
+  margin-bottom: -20px;
+  border-radius: 15px;
+}
+
+
+.item {
+  
+  margin-bottom: 100px;
+
+  position: center;
+  border-radius: .9em;
+  text-align: center;
+  background-image: url(images/whiteflame2.jpg);
+  
+  border: 3px;
+  border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+    border-left-style: solid;
+	border-top-color:black;
+	border-right-color:black;
+	border-bottom-color: black;
+	border-left-color:black;
+  background-position: center;
+  background-size: cover;
+  width: 425px;
+  height: 600px;
+  margin:30px auto;
+  
+}
+
+
+.product_display_content h2 {
+    text-align: center;
+    border: 3px solid black;
+    background-color: whitesmoke;
+    font-family:Heavy Copper;
+    font-size: 20px;
+    margin: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 7px;
+}
+
+.product_display_content p {
+    border: 3px solid black;
+    background-color:whitesmoke;
+    text-align: center;
+    font-family:Heavy Copper;
+    margin: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 7px;
+}
+
+.product_display_content img {
+
+    width: 375px;
+    height: 375px;
+    border: 3px solid black;
+    border-radius: 7px;
+    
+}
+
+.product_display_content input {
+    font: Heavy Copper;
+}
+
+
+.product_display_content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    size: 20px;
+}
+/*makes products move when making window bigger*/
+.product_display_content form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    size: 20px;
+    padding: 20px;
+    
+}
+
+.shopping_cart_items_display table {
+    font-family: 'Kanit';
+    border-collapse: collapse;
+    width: 700px;
+
+}
+
+.shopping_cart_items_display td {
+    font-family: 'Kanit';
+    background-color: ivory;
+    font-size: 20px;
+    
+}
+
+.shopping_cart_items_display th {
+    font-family: Heavy Copper;
+    background-color: pink;
+    height: 20px;
+    padding: 15px;
+}
+
+.shopping_cart_items_display tr {
+    font-family: 'Kanit';
+    align-content: center;
+    padding: 15px;
+    font-size: 25px;
+}
+.button-header {
+  margin: .5em 15% 2em 15%;
+  color: white;
+  border: 2px solid #2D9CDB;
+  background-color: lightgray;
+  border-radius: 0;
+  font-size: 1.5em;
+  font-weight: lighter;
+  padding-left: 2em;
+  padding-right: 2em;
+  
+}
+
+.button-header:hover {
+  background-color: lightgray;
+}
+
+.button-play {
+  display: block;
+  margin: 0 auto;
+  color: rgb(73, 222, 255);
+  font-size: 4em;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  text-align: center;
+  
+
+}
+
+.button-primary {
+  color: black;
+  background-color: white;
+  border: none;
+  border-radius: .3em;
+  font-weight: bold;
+}
+
+.button-primary:hover {
+  box-shadow: 0 0 15px 10px black;
+}
+

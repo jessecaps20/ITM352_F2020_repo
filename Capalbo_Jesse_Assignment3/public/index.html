@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rent-A-Rockstar</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="index.css" />
+    <script src="product_data.js"></script>
+    <script src="userproducts.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="nav main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="store.html">Rockstars</a></li>
+                <li><a href="venues.html">Venues</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cart.html">Cart</a></li>
+
+            </ul>
+        </nav>
+        <h1 class="title-name title-name-large">Rent-A-Rockstar</h1>
+        <div class="container">
+            
+        </div>
+    </header>
+    <div class="box">
+        <div class="box2">
+<h2>Welcome to Rent-A-Rockstar, the only place where you can rent a legendary guitarist to play with your band! We have now added venues to rent on our website too so be sure to check those out. When you are looking at our products plese click the name to view a description. have fun and ROCK ON!</h2>
+
+        </div>
+        
+    <!--Slideshow from https://www.w3schools.com/w3css/w3css_slideshow.asp-->
+    <div class="w3-content w3-section ">
+    <center>
+    <img class="mySlides w3-animate-fading" src="/images/Home1.jpg">
+    <img class="mySlides w3-animate-fading" src="/images/Home2.jpg">
+    <img class="mySlides w3-animate-fading" src="/images/Home3.jpg">
+</center>
+
+</div>
+    </div>
+    <script>
+        var slideIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > x.length) { slideIndex = 1 }
+            x[slideIndex - 1].style.display = "block";
+            setTimeout(carousel, 5000); 
+        }
+    </script>
+   
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rent A Rockstar</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="product_data.js"></script>
+    <script src="userproducts.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="nav main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="store.html">Rockstars</a></li>
+                <li><a href="venues.html">Venues</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cart.html">Cart</a></li>
+
+            </ul>
+        </nav>
+
+    <form name="registration_form" action="process_registration" method="POST"> 
+        <label id="newuser_label">Enter a Username</label>
+        <input type="text" name="newuser" size="40" placeholder="enter username" id="newuser"><span id="newusername_textbox_message_span" style="color: red; font-family: Kanit;"></span></br>
+        <br>
+        <label>Enter your Full Name</label>
+        <input type="text" name="newfullname" size="40" placeholder="enter full name"><span id="newfullname_textbox_message_span" style="color: red; font-family: Kanit;"></span><br />
+        <br>
+        <label>Enter a Password</label>
+        <input type="password" name="newpass" size="40" placeholder="enter password"><span id="newpassword_textbox_message_span" style="color: red; font-family: Kanit;"></span><br />
+        <br>
+        <label>Confirm Password</label>
+        <input type="password" name="newpass_confirm" size="40" placeholder="enter password"><span id="confirmpassword_textbox_message_span" style="color: red; font-family: Kanit;"></span><br />
+        <br>
+        <label>Enter Email</label>
+        <input type="email" name="newemail" size="40" placeholder="enter email"><span id="newemail_textbox_message_span" style="color: red; font-family: Kanit;"></span><br />
+        <br>
+        <input type="submit" value="Register" name="register_user" id="register">
+    </form>
+  
+</body>
+</html>
