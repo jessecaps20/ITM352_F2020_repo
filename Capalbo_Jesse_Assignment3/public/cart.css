@@ -6,16 +6,7 @@ body {
 }
 
 
-.header {
-    background-color: rgb(255, 200, 208);
-}
 
-.header img {
-    width: 500px;
-    height: 10%;
-    float: initial;
-    
-}
 /*Navigation bar*/
 
 .nav ul {
@@ -47,9 +38,8 @@ body {
   border: 5px solid black;
   border-radius: 15px;
 }
-.brandlogo{
-  height: 70px;
-}
+
+
 .main-nav li {
   padding: 0 2%;
 }
@@ -96,14 +86,11 @@ body {
 
 
 .item {
-  
   margin-bottom: 100px;
-
   position: center;
   border-radius: .9em;
   text-align: center;
   background-color: whitesmoke;
-  
   border: 3px;
   border-top-style: solid;
 	border-right-style: solid;
@@ -120,7 +107,6 @@ body {
   margin:30px auto;
   
 }
-
 
 .product_display_content h2 {
     text-align: center;
@@ -180,45 +166,6 @@ body {
     border-collapse: collapse;
     width: 700px;
 
-}
-
-.shopping_cart_items_display td {
-    font-family: 'Kanit';
-    background-color: ivory;
-    font-size: 20px;
-    
-}
-
-
-
-
-
-
-
-.button-header:hover {
-  background-color: lightgray;
-}
-
-.button-play {
-  display: block;
-  margin: 0 auto;
-  color: rgb(73, 222, 255);
-  font-size: 4em;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  padding: 0;
-  text-align: center;
-  
-
-}
-
-.button-primary {
-  color: black;
-  background-color: white;
-  border: none;
-  border-radius: .3em;
-  font-weight: bold;
 }
 
 .button-primary:hover {

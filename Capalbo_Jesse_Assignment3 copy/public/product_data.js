@@ -74,15 +74,15 @@ var venue_array = [
         "image":"brooklyn.jpg"
     },
     {
-        "item":"<a href=/venues/ElClub.html>El Club</a>",
+        "item":"<a href=/venues/ElClub.html>The Viper Room</a>",
         "price": 1500,
-        "image":"elclub.jpg"
+        "image":"viper.jpg"
     }
 ];
-var the_products = {  
+var products_array = {  
     "Rockstars": rockstar_array,
     "Venues": venue_array,   
 }
 if(typeof module != 'undefined') {
-    module.exports.the_products = the_products;
+    module.exports.products_array = products_array;
   }

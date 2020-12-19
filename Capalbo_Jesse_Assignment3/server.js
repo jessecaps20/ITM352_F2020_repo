@@ -56,6 +56,72 @@ app.post("/process_login", function (request, response) {
     response.send(alertalert);
 }
 });
+app.post("/process_registration", function (request, response) {
+
+    let POST = request.body;
+    var errors = [];
+
+
+    //username validation
+    if (typeof   users_reg_data[request.body.newuser.toLowerCase] != 'undefined') { // if username exists in userdata.json
+        errors.push("Username exists!");
+        //query_string_object['newusername_error']= "Username Exists!"
+    }
+
+    if (request.body.newuser.length < 4) { //if username is less than four characters long
+        errors.push("Username is too short!");
+    }
+
+    if (request.body.newuser.length > 25) { //if username is more than 25 characters long
+        errors.push("Username is too long!");
+    }
+
+    if ((/^[0-9a-zA-Z]+$/).test(request.body.newuser) == false) { // got the (/^[0-9a-zA-Z]+$/) from w3resource.com
+        errors.push("Username can only contain letters or numbers!"); // if username has characters other than letters/numbers
+    }
+
+    //full name validation
+    if (request.body.newfullname.length > 30) { //if full name is more than 25 characters long
+        errors.push("Name is too long!");
+    }
+
+    if (/^[A-Za-z]+$/.test(request.body.name)) { //(code from Justina) if full name contains characters beside letters
+    } else {
+        errors.push("Name can only contain letters!");
+    }
+
+    //password validation
+    if (request.body.newpass.length < 6) { //if password is less than six characters long
+        errors.push("Password is too short!");
+    }
+
+    //confirm password validation
+    if (request.body.newpass != request.body.newpass_confirm) { //if password confirm does not match password
+        errors.push("Password confirmation does not match!");
+    }
+
+    if (errors.length == 0) { //if there's no errors in registration data validation
+        let POST = request.body;
+
+        //send data to userdata.json to be stored
+        username = POST['newuser'];
+          users_reg_data[username] = {};
+          users_reg_data[username].name = POST['newfullname'];
+          users_reg_data[username].password = POST['newpass'];
+          users_reg_data[username].email = POST['newemail'];
+        reg_info_str = JSON.stringify(  users_reg_data); //parse and store new user data in reg_info_str
+        fs.writeFileSync(user_data_filename, reg_info_str, "utf-8");// write to file
+        query_string_object = request.query; //quantities from query string
+            query_string_object["username"] = username; // get username string
+            console.log(request);
+
+            response.redirect("./cart.html"); // redirect to invoice with the two strings
+    } else {
+
+        response.redirect("./registration.html");
+    }
+});
+
 
 app.post("/add_to_cart", function (request, response) {
    
@@ -88,7 +154,7 @@ app.post("/get_cart_data", function (request, response) {
     response.json(request.session.cart);
 });
 app.get("/complete_order", function (request, response) {
-    let str = '<h1>Thank you for shopping with us. ROCK ON</h1>';
+    let str = '<h1>Thank you for shopping with us. ROCK ON!</h1>';
     var transporter = nodemailer.createTransport({
         host: "mail.hawaii.edu",
         port: 25,
