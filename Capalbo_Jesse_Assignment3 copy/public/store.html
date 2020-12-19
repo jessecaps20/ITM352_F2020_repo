@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rent A Rockstar</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="product_data.js"></script>
+    <script src="userproducts.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="main-header"><!--code for header-->
+        <nav class="nav main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="store.html">Rockstars</a></li>
+                <li><a href="venues.html">Venues</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+        <section class="container content-section">
+            <h1 class="title-name title-name-large id="store-section">Our Rockstars</h1>
+    <div class="product_display_content">
+        <form name="product_form" action="./add_products_to_cart" method="POST"> 
+            <script>
+                for (i = 0; i < products_array["Rockstars"].length; i++) {// generates products
+                    document.write(`
+                        <section class="item">
+                            <h2>${products_array["Rockstars"][i].item}</h2>
+                             <p>${products_array["Rockstars"][i].price}</p>
+                             <img src= "./images/${products_array["Rockstars"][i].image}" ><br><br>
+                            <label id="quantity${i}_label"}">Shows Needed</label>
+                            <input type="text" placeholder="0" id="quantity${i}" name="quantity${i}"
+                            onkeyup="checkQuantityTextbox(this);">
+                            <span id="quantity${i}_span"}"></span><br><br>
+                            <input type="button" value="Add to Cart" name="add_the_stuff" onclick="
+                            add_to_cart(${i});
+                            ">
+                        </section>
+                    `);
+                }      
+            </script>
+        </form>
+    </div>
+</body>
+</html>
+<script src="./product_data.js" type="text/javascript"></script>
+<script>
+    var product_key = "Rockstars";
+async function postData(url = '', data = {}) {// javascript fetch code taken from https://www.codegrepper.com/code-examples/r/javascript+fetch+options
+  let response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data) 
+  });
+  return response.json(); 
+}
+function add_to_cart(i) {
+    postData('./add_to_cart', { 'product_key':product_key, 'product_index':i,'quantity':document.getElementById('quantity' + i).value})
+  .then(data => {
+    console.log(data);
+    document.getElementById(`quantity${i}_span`).innerHTML = data.message;
+    document.getElementById(`quantity${i}`).value = 0;
+  });
+}
+</script>
+
+
+
+<script>
+   
+    function isNonNegIntString(string_to_check, returnErrors = false) {
+        errors = []; 
+        if (Number(string_to_check) != string_to_check) { errors.push('<font color = "red">Not a number!</font color = "red">'); } 
+        else { 
+            if (string_to_check < 0) { errors.push('<font color = "red">Negative value!</font color = "red">'); } 
+            if (parseInt(string_to_check) != string_to_check) { errors.push('<font color = "red">Not an integer!</font color = "red">'); } 
+        }
+        return returnErrors ? errors : (errors.length == 0); 
+    }
+</script>
