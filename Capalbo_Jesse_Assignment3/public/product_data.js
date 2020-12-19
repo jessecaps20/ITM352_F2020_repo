@@ -74,9 +74,9 @@ var venue_array = [
         "image":"brooklyn.jpg"
     },
     {
-        "item":"<a href=/venues/ElClub.html>El Club</a>",
+        "item":"<a href=/venues/ElClub.html>The Viper Room</a>",
         "price": 1500,
-        "image":"elclub.jpg"
+        "image":"viper.jpg"
     }
 ];
 var products_array = {  
