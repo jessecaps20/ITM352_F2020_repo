@@ -63,7 +63,7 @@ async function postData(url = '', data = {}) {// javascript fetch code taken fro
   });
   return response.json(); 
 }
-function add_to_cart(i) {
+function add_to_cart(i) {// function code and help from Justina
     postData('./add_to_cart', { 'product_key':product_key, 'product_index':i,'quantity':document.getElementById('quantity' + i).value})
   .then(data => {
     console.log(data);

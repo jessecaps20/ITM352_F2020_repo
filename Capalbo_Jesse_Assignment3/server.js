@@ -1,4 +1,4 @@
-//CURRENTLY COMMENTING ALL MY CODE!!!//
+//Jesse Capalbo Assignment 3//
 
 var product_data = require('./public/product_data.js'); 
 var express = require('express'); 
@@ -26,7 +26,7 @@ app.all('*', function (request, response, next) {
     console.log(request.method + ' to ' + request.path);
     next(); 
 });
-app.post("/process_login", function (request, response) { // Process user's login, code from assignment 2 and Justina
+app.post("/process_login", function (request, response) { // Process user's login, code from assignment 2 and Justina, code creates session ID
     POST = request.body;
     if(typeof users_reg_data[request.body.username] != 'undefined') {
         if(request.body.password == users_reg_data[request.body.username].password) {

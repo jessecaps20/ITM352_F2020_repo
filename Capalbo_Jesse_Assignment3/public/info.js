@@ -249,10 +249,3 @@ function add_to_cart(i) {
     document.getElementById(`quantity${i}`).value = 0;
   });
 }
-
-var storedUsersCartArray = [];
-
-//check if the products in the array are defined
-if (typeof module != 'undefined') {
-    module.exports.storedUsersCartArray = storedUsersCartArray;
-}
